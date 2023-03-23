@@ -5,7 +5,7 @@
     https://api.github.com/users/<your name>
 */
 
-
+axios.get("https://api.github.com/users/duraanali")
 
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
@@ -35,6 +35,52 @@
     </div>
 */
 
+function createCard(img, location, profile, followers, following, bio){
+  const mainDiv = document.createElement('div')
+  const image = document.createElement('img')
+  const secondDiv = document.createElement('div')
+  const names = document.createElement('h3')
+  const username = document.createElement('p')
+  const locations = document.createElement('p')
+  const profiles = document.createElement('p')
+  const follower = document.createElement('p')
+  const followings = document.createElement('p')
+  const bios = document.createElement('p')
+
+
+mainDiv.classList.add('card')
+secondDiv.classList.add('card-info')
+names.classList.add('name')
+username.classList.add('username')
+
+image.src= img;
+locations.textContent= lacation;
+profiles. textContent= profile;
+follower.textContent = followers;
+followings.textContent= following;
+bios.textContent= bio;
+}
+ 
+const main = document.querySelector(".cards")
+
+axios.get("https://api.github.com/users/Hodan1997")
+.then(response => {
+  response.data.forEach(document =>{
+    const mainDiv = document.createElement('div')
+  const image = document.createElement('img')
+  const secondDiv = document.createElement('div')
+  const names = document.createElement('h3')
+  const username = document.createElement('p')
+  const locations = document.createElement('p')
+  const profiles = document.createElement('p')
+  const follower = document.createElement('p')
+  const followings = document.createElement('p')
+  const bios = document.createElement('p')
+
+  main.appendChild(createCard(img, location, profile, followers, following, bio))
+
+  })
+})
 
 
 /*
