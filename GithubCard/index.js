@@ -82,7 +82,6 @@ axios.get("https://api.github.com/users/Hodan1997")
   })
 })
 
-
 /*
   STEP 4: Pass the data received from Github into your function, and append the returned markup to the DOM as a child of .cards
 */
